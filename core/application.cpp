@@ -1,0 +1,51 @@
+#include <cerrno>
+#include <climits>
+#include <cstdlib>
+#include "application.h"
+int k;
+int lb;
+int bd;
+thread_local long threadSolutionCount=0;
+int workerThreads=1;
+bool parallelExecution=true;
+bool enableDirectWideEntry=true;
+bool enableState128Simd=false;
+bool enableQueuePrecheck=false,enableRemap128=false;
+bool enableWideCostSampling=false;
+bool enableMixedFixedContext=false;
+bool enableFoldingProbe=false;
+bool enableLocalFolding=true;
+int entryFoldingPolicy=0;
+bool enableLocalRematerialization=false;
+bool reuseRematerializationStorage=false;
+int rematerializationMinSlack=0;
+int kernelSelectionMode=0;
+int progressIntervalSeconds=0;
+int seedTaskLimit=0;
+#include <cmath>
+#include "search/search_context.h"
+#include <queue>
+#include <deque>
+#include <thread>
+#include <atomic>
+#include <chrono>
+#include <sstream>
+#include <mutex>
+#include <condition_variable>
+#include <memory>
+#include <new>
+#include <limits>
+
+namespace statebit {
+#include "runtime/statistics_definitions.inc"
+#include "output/plex_emitter.inc"
+#include "output/global_maximality.inc"
+#include "runtime/task_pool.inc"
+#include "preprocess/root_neighborhood.inc"
+#include "preprocess/induced_subgraph.inc"
+#include "preprocess/core_peeling.inc"
+#include "preprocess/pair_constraints.inc"
+#include "runtime/worker_statistics.inc"
+#include "runtime/enumerate_graph.inc"
+}
+#include "runtime/command_line.inc"

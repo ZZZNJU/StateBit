@@ -1,0 +1,41 @@
+            summaries[tid].seeds=localSeeds;
+            summaries[tid].valid_blocks=localValid;
+            summaries[tid].outputs=static_cast<unsigned long long>(threadSolutionCount);
+            summaries[tid].wall_sec=std::chrono::duration<double>(std::chrono::steady_clock::now()-workerStart).count();
+            table4Audit.report(tid);
+            c0Opportunity.report(tid);
+            mixed_f64::stats().report(tid);
+            wide_cost::tls().report(tid);
+            transferAudit.report(tid);
+            printf("SIMD128_WORKER id=%d roots=%llu packets=%llu slots=%llu occ1=%llu occ2=%llu pivot_packets=%llu refine_packets=%llu generated_children=%llu single_ready=%llu scalar_children=%llu export_calls=%llu exported=%llu\n",tid,
+                   simd128Audit.roots,state128Stats.simd_packets,state128Stats.simd_slots,state128Stats.simd_occ1,state128Stats.simd_occ2,state128Stats.simd_pivot_packets,state128Stats.simd_refine_packets,state128Stats.simd_generated_children,state128Stats.hybrid_single_ready_events,state128Stats.hybrid_scalar_generated_children,simd128Audit.export_calls,simd128Audit.exported);
+            kernel_selection::threadPolicy().report(tid);
+            experiment_control::report(tid);
+#ifdef SET
+            std::printf("VERIFY_WORKER id=%d count=%llu xor=%llu sum=%llu\n",tid,verifyCount,verifyXor,verifySum);
+#endif
+            summaries[tid].help_tasks=localHelpTasks;
+            summaries[tid].stolen_tasks=localStolenTasks;
+            summaries[tid].large_seed_count=localLargeSeeds;
+            summaries[tid].max_hop=localMaxHop;
+            summaries[tid].max_blk=localMaxBlk;
+            summaries[tid].max_left=localMaxLeft;
+            summaries[tid].max_matrix_bytes=localMaxMatrixBytes;
+            summaries[tid].complement_fold_real=forcedComplementFoldRealStats;
+            summaries[tid].forced_base=forcedBaseStats;
+            summaries[tid].forced_base_adaptive=forcedBasePayoffGate.stats;
+            summaries[tid].forced_base_bit64=forcedBaseBit64Stats;
+            summaries[tid].direct_empty_128=directEmpty128Handoffs;
+            summaries[tid].direct_empty_64=directEmpty64Handoffs;
+            summaries[tid].state64=state64Stats;
+            summaries[tid].state128=state128Stats;
+            summaries[tid].state256=state256Stats;
+            summaries[tid].best_diag=bestDiagStats;
+            summaries[tid].preupdate_kplex=preUpdateKPlexStats;
+            summaries[tid].dense_touch=denseTouchStats;
+            summaries[tid].aggregate_forced_context=aggregateForcedContextStats;
+            summaries[tid].steady_kernel_telemetry=steadyKernelProfileStats;
+            summaries[tid].witness_resume=witnessResumeStats;
+            summaries[tid].bit_search=bitStats;
+            summaries[tid].seed_mode=localSeedMode;
+            summaries[tid].folding_gate_earlyoff=localFoldingEarlyOff;

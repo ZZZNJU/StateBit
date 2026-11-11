@@ -1,0 +1,3 @@
+case,filename,k,q,mode,threads,expected_count
+soc-epinions_k3_q20,soc-epinions.bin,3,20,sequential,1,548634119
+webbase-2001_k3_q800,webbase-2001.bin,3,800,parallel,16,1785341050

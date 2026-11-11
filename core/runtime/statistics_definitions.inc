@@ -1,0 +1,35 @@
+    thread_local Table4Audit table4Audit;
+    thread_local TransferAudit transferAudit;
+    thread_local Simd128Audit simd128Audit;
+    thread_local C0Opportunity c0Opportunity;
+    thread_local unsigned long long directEmpty128Handoffs=0;
+    thread_local unsigned long long directEmpty64Handoffs=0;
+    thread_local BitSearchStats bitStats;
+    thread_local WordKernelStats wordKernelStats;
+    thread_local LaneDfsStats laneStats;
+    thread_local LanePivotStats lanePivotStats;
+    thread_local AvxPacketStats avxStats;
+    thread_local MaxSimdStats maxSimdStats;
+    thread_local WholeWitnessStats wholeWitnessStats;
+    thread_local WitnessResumeStats witnessResumeStats;
+    thread_local Refine2DStats refine2DStats;
+    thread_local PivotReuseStats pivotReuseStats;
+    thread_local DegreePeelStats degreePeelStats;
+    thread_local WorkBatchStats workBatchStats;
+    thread_local SteadyKernelProfileStats steadyKernelProfileStats;
+    thread_local ForcedComplementFoldRealStats forcedComplementFoldRealStats;
+    thread_local ForcedBaseStats forcedBaseStats;
+    thread_local ForcedBasePayoffGate forcedBasePayoffGate;
+    thread_local ForcedBaseBit64Stats forcedBaseBit64Stats;
+    thread_local State64Stats state64Stats;
+    thread_local State128Stats state128Stats;
+    thread_local State256Stats state256Stats;
+    thread_local BestDiagStats bestDiagStats;
+    thread_local PreUpdateKPlexStats preUpdateKPlexStats;
+    thread_local DenseTouchStats denseTouchStats;
+    thread_local AggregateForcedContextStats aggregateForcedContextStats;
+    thread_local AutoLeftContextSelector autoLeftContextSelector;
+#ifdef SET
+    std::vector<int> verifyPeelOriginal;
+    thread_local unsigned long long verifyCount=0,verifyXor=0,verifySum=0;
+#endif

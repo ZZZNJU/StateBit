@@ -1,0 +1,15 @@
+{
+  "selector": "hybrid4",
+  "local_folding": 1,
+  "local_f_remat": 1,
+  "remat_stack_reuse": 1,
+  "remat_min_slack": 3,
+  "direct256": 1,
+  "wide_cost": 0,
+  "mixed_f": 0,
+  "c0_probe": 0,
+  "queue_precheck": 1,
+  "remap128": 1,
+  "simd128": 0,
+  "fold_variant": 3
+}

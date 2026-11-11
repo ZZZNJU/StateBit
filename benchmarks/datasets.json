@@ -1,0 +1,14 @@
+{
+  "soc-epinions.bin": {
+    "n": 75879,
+    "stored_arcs": 811480,
+    "size": 3549444,
+    "sha256": "c2bf1d72528f4be428ca952691c357862df9adec93b3bf6140d7bf3743d4e2cc"
+  },
+  "webbase-2001.bin": {
+    "n": 115554441,
+    "stored_arcs": 1709619522,
+    "size": 7300695860,
+    "sha256": "c8f9e90023358f499fcf7b5bd40894fcde5a4b7531c4931ca2d3eb4d922b7a0c"
+  }
+}
